@@ -1,0 +1,27 @@
+{
+  "name": "camt",
+  "version": "1.0.0",
+  "description": "Create personalized workouts and keep track of you progress. DO NOT LET PEOPLE SAY YOU CANT WHEN YOU CAMT!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosfgutier/CAMT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosfgutier/CAMT/issues"
+  },
+  "homepage": "https://github.com/carlosfgutier/CAMT#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  }
+}
