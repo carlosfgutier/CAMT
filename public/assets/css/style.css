@@ -1,0 +1,125 @@
+body {
+	background-color: black;
+	font-family: 'Oswald', sans-serif;
+}
+
+/*RESPONSIVE CSS*/
+/*--------------------------------------------*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	/*GENERAL CSS*/
+	/*--------------------------------------------*/
+  	body {
+		background-color: black;
+		font-family: 'Oswald', sans-serif;
+	}
+
+	header {
+		text-align: center;
+	}
+
+	/*LOGIN SCREEN*/
+	/*--------------------------------------------*/
+	#container {
+		max-width: 100%;
+		background-color: black;
+	}
+
+	#logInSection {
+		background-color: black;
+		padding: 20px;
+	}
+
+	.logInImput {
+		width: 300px;
+		height: 40px;
+		margin: 10px;
+		font-size: 30px;
+	}
+
+	.button {
+		font-size: 50px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	/*WORKOUT SCREENS*/
+	/*----------------------------------------------*/
+	#headerCheck {
+		width: 70px;
+		height: auto;
+		padding: 20px;
+	}
+
+	.singleWorkout {
+		background-color: rgba(255, 255, 255, 0.32);
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+		padding: 10px 0;
+		margin: 20px 5px;
+	}
+
+	.workoutImage {
+		width: 70px;
+		height: auto;
+	}
+
+	#mainNav {
+		background-color: black;
+		position: fixed;
+		bottom: 0;
+		left: 5px;
+		right: 5px;
+	}
+
+	.navIcon {
+		width: 70px;
+		height: auto;
+		padding: 10px 125px;
+	}
+
+	/*PROFILE SCREEN*/
+	/*--------------------------------------------*/
+	#about {
+/*		background-color: rgba(255, 255, 255, 0.32);*/
+	}
+
+	.panel {
+		width: 32%;
+		height: auto;
+		padding: 70px 0;
+		text-align: center;
+	}
+
+	#panelOne {
+		display: inline-block;
+
+	}
+
+	#panelTwo {
+		display: inline-block;
+
+	}
+
+	#profilePicture {
+		width: 150px;
+		height: auto;
+	}
+
+	#panelThree {
+		color: white;
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		line-height: 55px;
+		text-align: left;
+		display: inline-block;
+	}
+}
+
