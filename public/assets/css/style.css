@@ -3,11 +3,15 @@ body {
 	font-family: 'Oswald', sans-serif;
 }
 
+/*RESPONSIVE CSS*/
+/*--------------------------------------------*/
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
+	/*GENERAL CSS*/
+	/*--------------------------------------------*/
   	body {
 		background-color: black;
 		font-family: 'Oswald', sans-serif;
@@ -46,7 +50,7 @@ body {
 		width: 100%;
 	}
 
-	/*WORKOUTS SCREEN*/
+	/*WORKOUT SCREENS*/
 	/*----------------------------------------------*/
 	#headerCheck {
 		width: 70px;
@@ -79,9 +83,43 @@ body {
 		width: 70px;
 		height: auto;
 		padding: 10px 125px;
+	}
+
+	/*PROFILE SCREEN*/
+	/*--------------------------------------------*/
+	#about {
 /*		background-color: rgba(255, 255, 255, 0.32);*/
 	}
 
+	.panel {
+		width: 32%;
+		height: auto;
+		padding: 70px 0;
+		text-align: center;
+	}
 
+	#panelOne {
+		display: inline-block;
+
+	}
+
+	#panelTwo {
+		display: inline-block;
+
+	}
+
+	#profilePicture {
+		width: 150px;
+		height: auto;
+	}
+
+	#panelThree {
+		color: white;
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		line-height: 55px;
+		text-align: left;
+		display: inline-block;
+	}
 }
 
