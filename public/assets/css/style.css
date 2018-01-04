@@ -8,10 +8,20 @@ body {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
+  	body {
+		background-color: black;
+		font-family: 'Oswald', sans-serif;
+	}
+
+	header {
+		text-align: center;
+	}
+
 	/*LOGIN SCREEN*/
+	/*--------------------------------------------*/
 	#container {
 		max-width: 100%;
-		background-color: white;
+		background-color: black;
 	}
 
 	#logInSection {
@@ -35,6 +45,43 @@ body {
 	img {
 		width: 100%;
 	}
+
+	/*WORKOUTS SCREEN*/
+	/*----------------------------------------------*/
+	#headerCheck {
+		width: 70px;
+		height: auto;
+		padding: 20px;
+	}
+
+	.singleWorkout {
+		background-color: rgba(255, 255, 255, 0.32);
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+		padding: 10px 0;
+		margin: 20px 5px;
+	}
+
+	.workoutImage {
+		width: 70px;
+		height: auto;
+	}
+
+	#mainNav {
+		background-color: black;
+		position: fixed;
+		bottom: 0;
+		left: 5px;
+		right: 5px;
+	}
+
+	.navIcon {
+		width: 70px;
+		height: auto;
+		padding: 10px 125px;
+/*		background-color: rgba(255, 255, 255, 0.32);*/
+	}
+
 
 }
 
