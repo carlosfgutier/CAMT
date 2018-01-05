@@ -12,17 +12,21 @@ body {
 
 	/*GENERAL CSS*/
 	/*--------------------------------------------*/
-  	body {
-		background-color: black;
-		font-family: 'Oswald', sans-serif;
-	}
-
 	header {
 		text-align: center;
 	}
 
 	/*LOGIN SCREEN*/
 	/*--------------------------------------------*/
+  	#logInBody {
+		background-image: url(../images/gymLogIn.jpg);
+		background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	bottom: 0;
+    	background-position: center bottom;
+		font-family: 'Oswald', sans-serif;
+	}
+
 	#container {
 		max-width: 100%;
 		background-color: black;
@@ -30,7 +34,7 @@ body {
 
 	#logInSection {
 		background-color: black;
-		padding: 20px;
+		padding: 20px 20px 5px 20px;
 	}
 
 	.logInImput {
@@ -41,9 +45,16 @@ body {
 	}
 
 	.button {
-		font-size: 50px;
+		font-size: 80px;
 		font-family: 'Oswald', sans-serif;
 		color: white;
+	}
+
+	#invitation {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		color: white;
+		margin-top: 35px;
 	}
 
 	img {
@@ -59,11 +70,17 @@ body {
 	}
 
 	.singleWorkout {
-		background-color: rgba(255, 255, 255, 0.32);
+		background-color: rgba(255, 255, 255, 0.5);
 		font-family: 'Oswald', sans-serif;
 		font-size: 50px;
+		border-radius: 25px;
 		padding: 10px 0;
-		margin: 20px 5px;
+		margin: 20px 10px;
+	}
+
+	.singleWorkout:hover {
+		background-color: rgba(255, 255, 255, 0.32);
+
 	}
 
 	.workoutImage {
@@ -87,30 +104,37 @@ body {
 
 	/*PROFILE SCREEN*/
 	/*--------------------------------------------*/
-	#about {
-/*		background-color: rgba(255, 255, 255, 0.32);*/
-	}
-
 	.panel {
-		width: 32%;
+		margin: auto;
+    	width: 50%;
 		height: auto;
-		padding: 70px 0;
-		text-align: center;
 	}
 
 	#panelOne {
-		display: inline-block;
+		width: 100%;
+	}
 
+	#eventsButton {
+		font-size: 30px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+		margin: 0 50% 0 10%;
+	}
+
+	#settings {
+		width: 50px;
+		height: auto;
+		margin: 0 10% 0 10%;
 	}
 
 	#panelTwo {
-		display: inline-block;
-
+		text-align: center;
 	}
 
 	#profilePicture {
-		width: 150px;
+		width: 400px;
 		height: auto;
+		border-radius: 50%;
 	}
 
 	#panelThree {
@@ -118,8 +142,7 @@ body {
 		font-family: 'Oswald', sans-serif;
 		font-size: 30px;
 		line-height: 55px;
-		text-align: left;
-		display: inline-block;
+		text-align: center;
 	}
 }
 
