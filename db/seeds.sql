@@ -1,0 +1,1 @@
+-- create test type accounts for the database 
