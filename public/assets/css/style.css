@@ -12,7 +12,13 @@ body {
 
 	/*GENERAL CSS*/
 	/*--------------------------------------------*/
-  	body {
+	header {
+		text-align: center;
+	}
+
+	/*LOGIN SCREEN*/
+	/*--------------------------------------------*/
+  	#logInBody {
 		background-image: url(../images/gymLogIn.jpg);
 		background-repeat: no-repeat;
     	background-attachment: fixed;
@@ -20,13 +26,7 @@ body {
     	background-position: center bottom;
 		font-family: 'Oswald', sans-serif;
 	}
-
-	header {
-		text-align: center;
-	}
-
-	/*LOGIN SCREEN*/
-	/*--------------------------------------------*/
+	
 	#container {
 		max-width: 100%;
 		background-color: black;
