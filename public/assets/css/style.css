@@ -98,31 +98,37 @@ body {
 
 	/*PROFILE SCREEN*/
 	/*--------------------------------------------*/
-	#about {
-/*		background-color: rgba(255, 255, 255, 0.32);*/
-	}
-
 	.panel {
-		width: 32%;
+		margin: auto;
+    	width: 50%;
 		height: auto;
-		padding: 70px 0;
-		text-align: center;
 	}
 
 	#panelOne {
-		display: inline-block;
+		width: 100%;
+	}
 
+	#eventsButton {
+		font-size: 30px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+		margin: 0 50% 0 10%;
+	}
+
+	#settings {
+		width: 50px;
+		height: auto;
+		margin: 0 10% 0 10%;
 	}
 
 	#panelTwo {
-		display: inline-block;
-		border-radius: 50%;
-
+		text-align: center;
 	}
 
 	#profilePicture {
-		width: 150px;
+		width: 400px;
 		height: auto;
+		border-radius: 50%;
 	}
 
 	#panelThree {
@@ -130,8 +136,7 @@ body {
 		font-family: 'Oswald', sans-serif;
 		font-size: 30px;
 		line-height: 55px;
-		text-align: left;
-		display: inline-block;
+		text-align: center;
 	}
 }
 
