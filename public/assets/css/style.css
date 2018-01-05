@@ -13,7 +13,11 @@ body {
 	/*GENERAL CSS*/
 	/*--------------------------------------------*/
   	body {
-		background-color: black;
+		background-image: url(../images/gymLogIn.jpg);
+		background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	bottom: 0;
+    	background-position: center bottom;
 		font-family: 'Oswald', sans-serif;
 	}
 
@@ -30,7 +34,7 @@ body {
 
 	#logInSection {
 		background-color: black;
-		padding: 20px;
+		padding: 20px 20px 5px 20px;
 	}
 
 	.logInImput {
@@ -41,9 +45,16 @@ body {
 	}
 
 	.button {
-		font-size: 50px;
+		font-size: 80px;
 		font-family: 'Oswald', sans-serif;
 		color: white;
+	}
+
+	#invitation {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		color: white;
+		margin-top: 35px;
 	}
 
 	img {
@@ -105,6 +116,7 @@ body {
 
 	#panelTwo {
 		display: inline-block;
+		border-radius: 50%;
 
 	}
 
