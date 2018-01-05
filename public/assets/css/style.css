@@ -26,7 +26,7 @@ body {
     	background-position: center bottom;
 		font-family: 'Oswald', sans-serif;
 	}
-	
+
 	#container {
 		max-width: 100%;
 		background-color: black;
@@ -70,11 +70,17 @@ body {
 	}
 
 	.singleWorkout {
-		background-color: rgba(255, 255, 255, 0.32);
+		background-color: rgba(255, 255, 255, 0.5);
 		font-family: 'Oswald', sans-serif;
 		font-size: 50px;
+		border-radius: 25px;
 		padding: 10px 0;
-		margin: 20px 5px;
+		margin: 20px 10px;
+	}
+
+	.singleWorkout:hover {
+		background-color: rgba(255, 255, 255, 0.32);
+
 	}
 
 	.workoutImage {
