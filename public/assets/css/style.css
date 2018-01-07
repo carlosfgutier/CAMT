@@ -82,6 +82,21 @@ body {
 		background-color: rgba(255, 255, 255, 0.32);
 	}
 
+	#doneButton {
+		font-family: 'Oswald', sans-serif;
+		font-size: 80%;
+		margin-left: 55%;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+		position: relative;
+		bottom: 10px;
+	}
+
+	#doneButton:hover {
+		background-color: rgba(255, 255, 255, 0.32);
+	}
+
 	.dropdown-content {
 		font-family: 'Oswald', sans-serif;
 		font-size: 20px;
