@@ -15,13 +15,13 @@
 			<img id="headerCheck" src="assets/images/check.png" alt="check">
 		</header>
 
-		<section class="bottomPadding">
+		<section class="bottomPadding muscleGroups">
 			<div class="dropdown">
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					CHEST
 				</div>
-				<div id="dropChest" class="dropdown-content">
+				<div id="dropChest" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -32,7 +32,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					UPPER-BACK
 				</div>
-				<div id="dropUpper-Back" class="dropdown-content">
+				<div id="dropUpper-Back" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -43,7 +43,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LOWER-BACK
 				</div>
-				<div id="dropLower-Back" class="dropdown-content">
+				<div id="dropLower-Back" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -54,7 +54,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ARMS
 				</div>
-				<div id="dropArms" class="dropdown-content">
+				<div id="dropArms" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -65,7 +65,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					SHOULDERS
 				</div>
-				<div id="dropShoulders" class="dropdown-content">
+				<div id="dropShoulders" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -76,7 +76,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ABS
 				</div>
-				<div id="dropAbs" class="dropdown-content">
+				<div id="dropAbs" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -87,7 +87,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					BUTT
 				</div>
-				<div id="dropButt" class="dropdown-content">
+				<div id="dropButt" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -98,7 +98,7 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LEGS
 				</div>
-				<div id="dropLegs" class="dropdown-content">
+				<div id="dropLegs" class="dropdown-content" data-state="hide">
 					<a href="#">Exercise 1</a>
 					<a href="#">Exercise 2</a>
 				</div>
@@ -111,10 +111,30 @@
 			<a href="myWorkoutsTest.html"><img id="navCheck" class="navIcon" src="assets/images/workoutsIcon.png" alt="weight"/></a>
 			<a href="profileTest.html"><img id="navCheck" class="navIcon" src="assets/images/profileIcon.png" alt="check"/></a>
 		</nav>
-		
 	</div>
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$(".singleWorkout").attr("data-state", "hide");
+
+			$(".singleWorkout").on("click", function() {
+				var state = $(this).attr("data-state");
+				console.log(state);
+
+				if (state === "hide") {
+					$(this).attr("data-state", "show");
+					state = "show";
+				} else {
+					$(this).attr("data-state", "hide");
+					state = "hide"
+				}
+			});
+		});
+
+	</script>
 </body>
 </html>
