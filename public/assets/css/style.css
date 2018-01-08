@@ -160,6 +160,20 @@ body {
 		margin-bottom: 100px;
 	}
 
+	.saveWorkout {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+		margin: 0 0 5px 5px;
+	}
+
+	.exercise {
+		background-color: black;
+		color: white;
+	}
+
 	/*PROFILE SCREEN*/
 	/*--------------------------------------------*/
 	.panel {

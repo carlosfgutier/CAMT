@@ -21,8 +21,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					CHEST
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -32,8 +38,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					UPPER-BACK
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button>Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -43,8 +55,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LOWER-BACK
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -54,8 +72,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ARMS
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -65,8 +89,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					SHOULDERS
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -76,8 +106,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ABS
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -87,8 +123,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					BUTT
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -98,8 +140,14 @@
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LEGS
 					<div id="dropChest" class="dropdown-content" data-state="hide">
-						<a href="#">Exercise 1</a>
-						<a href="#">Exercise 2</a>
+						<a href="#">Exercise 1
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
+						<a href="#">Exercise 2
+							<p>This is a description</p>
+						</a>
+						<button class="saveWorkout">Save</button>
 					</div>
 				</div>
 			</div>
@@ -118,30 +166,30 @@
 
 	<script type="text/javascript">
 
-		$(document).ready(function(){
-			$(".singleWorkout").attr("data-state", "hide");
-			var state = "hide";
-			console.log(state);
+		// $(document).ready(function(){
+		// 	$(".singleWorkout").attr("data-state", "hide");
+		// 	var state = "hide";
+		// 	console.log(state);
 
-			if (state === "hide") {
-				$(".dropdown-content").hide();
-			}
+		// 	if (state === "hide") {
+		// 		$(".dropdown-content").hide();
+		// 	}
 
-			$(".singleWorkout").on("click", function() {
+		// 	$(".singleWorkout").on("click", function() {
 
-				if (state === "hide") {
-					$("div.dropdown-content").siblings().attr("data-state", "show");
-					$("div.dropdown-content").siblings().show();
-					state = "show";
-					console.log("show" + state);
-				} else  if (state === "show") {
-					$("div.dropdown-content").siblings().attr("data-state", "hide");
-					$("div.dropdown-content").siblings().hide();
-					state = "hide";
-					console.log("hide" + state);
-				}
-			});
-		});
+		// 		if (state === "hide") {
+		// 			$("div.dropdown-content").children().attr("data-state", "show");
+		// 			$("div.dropdown-content").children().show();
+		// 			state = "show";
+		// 			console.log("show" + state);
+		// 		} else  if (state === "show") {
+		// 			$("div.dropdown-content").children().attr("data-state", "hide");
+		// 			$("div.dropdown-content").children().hide();
+		// 			state = "hide";
+		// 			console.log("hide" + state);
+		// 		}
+		// 	});
+		// });
 
 	</script>
 </body>
