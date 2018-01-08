@@ -32,8 +32,9 @@
 	<div id="myModal" class="modal">
 	  <!-- Modal content -->
 	  <div class="modal-content">
-	    <span class="close">&times;</span>
-	    <form>
+	    <span class="close">&times;</span><br>
+
+	    <form id="signUpForm">
 	    	Username:<br>
 	    	<input id="nameInput" class="info" type="text" name="username" placeholder="Username" val="">
   			<br>
@@ -51,6 +52,7 @@
   			<br>
 	    </form>
 	    <button id="modalSubmit">Submit</button>
+	    <p id="pleaseComplete">Please complete all fields</p>
 	  </div>
 
 	</div>
@@ -61,43 +63,54 @@
 	<!-- LogIn JS logic -->
 	<script>
 
-		// Get the modal
-		var modal = document.getElementById('myModal');
-		var btn = document.getElementById("signUp");
-		var span = document.getElementsByClassName("close")[0]; 
-		btn.onclick = function() {
-		    modal.style.display = "block";
-		}
+		$(document).ready(function() {
+			$("#pleaseComplete").hide();
 
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-		    modal.style.display = "none";
-		}
+			// MODAL
+			var modal = document.getElementById('myModal');
+			var btn = document.getElementById("signUp");
+			var span = document.getElementsByClassName("close")[0]; 
+			btn.onclick = function() {
+			    modal.style.display = "block";
+			}
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-		    if (event.target == modal) {
-		        modal.style.display = "none";
-		    }
-		}
+			span.onclick = function() {
+			    modal.style.display = "none";
+			}
 
-		$("#modalSubmit").on("click", function() {
-	      event.preventDefault();
+			window.onclick = function(event) {
+			    if (event.target == modal) {
+			        modal.style.display = "none";
+			    }
+			}
 
-	    	if ($(".info").val() != "") {
-	    		var newUser = {
-			        name: $("#nameInput").val(),
-			        city: $("#cityInput").val(),
-			        zipcode: $("#zipcodeInput").val(),
-			        password: $("#passwordInput").val()
-		     	};
-		     	console.log(newUser);
+			$("#modalSubmit").on("click", function() {
+		      event.preventDefault();
 
-		     	//POST USER INFO
-	    	}
-	    });
+		    	if ($("#nameInput").val() != ""
+		    		&& $("#cityInput").val() != ""
+		    		&& $("#zipcodeInput").val() != ""
+		    		&& $("#passwordInput").val() != ""
+		    		&& $("#password2Input").val() != "") {
+		    		
+		    		var newUser = {
+				        name: $("#nameInput").val(),
+				        city: $("#cityInput").val(),
+				        zipcode: $("#zipcodeInput").val(),
+				        password: $("#passwordInput").val()
+			     	};
+			     	console.log(newUser);
+			     	$("#pleaseComplete").hide();
+			     	//POST USER INFO
+			     	window.location.href="profileTest.html";
+		    	} else {
+		    		$("#pleaseComplete").show();
+		    	}
+		    });
+
+	   	});
+
 
 	</script>
-
 </body>
 </html>
