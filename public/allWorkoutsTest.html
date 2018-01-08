@@ -20,7 +20,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					CHEST
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -37,11 +37,11 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					UPPER-BACK
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
-						<button>Save</button>
+						<button class="saveWorkout">Save</button>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
 						</a>
@@ -54,7 +54,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LOWER-BACK
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -71,7 +71,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ARMS
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -88,7 +88,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					SHOULDERS
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -105,7 +105,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					ABS
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -122,7 +122,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					BUTT
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -139,7 +139,7 @@
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 					LEGS
-					<div id="dropChest" class="dropdown-content" data-state="hide">
+					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
 						</a>
@@ -166,30 +166,30 @@
 
 	<script type="text/javascript">
 
-		// $(document).ready(function(){
-		// 	$(".singleWorkout").attr("data-state", "hide");
-		// 	var state = "hide";
-		// 	console.log(state);
+		$(document).ready(function() {
+			//hide all drop downs
+			$(".dropdown-content").hide();
 
-		// 	if (state === "hide") {
-		// 		$(".dropdown-content").hide();
-		// 	}
+			//clicking on next workout hides any other and shows clicked one
+			$(".dropdown").click(function(){
+				$(".dropdown-content").each(
+					function(index, item){
+						$(item).hide();
+					}
+				);
+				$(this).find(".dropdown-content").show();
+			});
 
-		// 	$(".singleWorkout").on("click", function() {
+			$(".dropdown-content").click(function(){
+				$(this).hide();
+				return false; // don't keep bubbling
+			});
 
-		// 		if (state === "hide") {
-		// 			$("div.dropdown-content").children().attr("data-state", "show");
-		// 			$("div.dropdown-content").children().show();
-		// 			state = "show";
-		// 			console.log("show" + state);
-		// 		} else  if (state === "show") {
-		// 			$("div.dropdown-content").children().attr("data-state", "hide");
-		// 			$("div.dropdown-content").children().hide();
-		// 			state = "hide";
-		// 			console.log("hide" + state);
-		// 		}
-		// 	});
-		// });
+			$(".dropdown-content button").click(function(){
+				console.log("Save");
+				return false;
+			})
+		});
 
 	</script>
 </body>
