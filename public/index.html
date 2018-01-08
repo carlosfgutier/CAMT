@@ -34,8 +34,8 @@
 	  <div class="modal-content">
 	    <span class="close">&times;</span>
 	    <form>
-	    	Name:<br>
-	    	<input id="nameInput" class="info" type="text" name="name" placeholder="Arnold" val="">
+	    	Username:<br>
+	    	<input id="nameInput" class="info" type="text" name="username" placeholder="Username" val="">
   			<br>
   			City:<br>
   			<input id="cityInput" class="info" type="text" name="city" placeholder="City" val="">
@@ -47,7 +47,7 @@
   			<input id="passwordInput" class="info" type="text" name="password" placeholder="Password" val="">
   			<br>
   			Verify Password:<br>
-  			<input id="password2Input" class="info" type="text" name="password" placeholder="Password2" val="">
+  			<input id="password2Input" class="info" type="text" name="password" placeholder="Password" val="">
   			<br>
 	    </form>
 	    <button id="modalSubmit">Submit</button>
@@ -81,21 +81,21 @@
 		    }
 		}
 
-		// $("#modalSubmit").on("click", function() {
-	 //      event.preventDefault();
+		$("#modalSubmit").on("click", function() {
+	      event.preventDefault();
 
-	 //    	if ($(".info").val() != "") {
-	 //    		var newUser = {
-		// 	        name: $("#nameInput").val(),
-		// 	        city: $("#cityInput").val(),
-		// 	        zipcode: $("#zipcodeInput").val(),
-		// 	        password: $("#passwordInput").val()
-		//      	};
-		//      	console.log(newUser);
+	    	if ($(".info").val() != "") {
+	    		var newUser = {
+			        name: $("#nameInput").val(),
+			        city: $("#cityInput").val(),
+			        zipcode: $("#zipcodeInput").val(),
+			        password: $("#passwordInput").val()
+		     	};
+		     	console.log(newUser);
 
-		//      	//POST USER INFO
-	 //    	}
-	 //    });
+		     	//POST USER INFO
+	    	}
+	    });
 
 	</script>
 
