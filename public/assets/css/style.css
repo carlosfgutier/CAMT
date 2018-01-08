@@ -52,6 +52,11 @@ body {
 	}
 
 	#signUp {
+		font-family: 'Oswald', sans-serif;
+		background-color: black;
+		color: white;
+		font-size: 29px;
+		border-color: black;
 		text-decoration: underline;
 	}
 
@@ -65,7 +70,7 @@ body {
 
 	#invitation {
 		font-family: 'Oswald', sans-serif;
-		font-size: 30px;
+		font-size: 29px;
 		color: white;
 		margin-top: 35px;
 	}
@@ -197,5 +202,45 @@ body {
 		line-height: 55px;
 		text-align: center;
 	}
-}
 
+	/*MODAL*/
+	/*--------------------------------------------*/
+	/* The Modal (background) */
+	.modal {
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgba(0, 0, 0, 0.69); /* Black w/ opacity */
+	    color: white;
+	    text-align: center;
+	}
+
+	/* Modal Content/Box */
+	.modal-content {
+	    background-color: rgba(0, 0, 0, 0.69);
+	    margin: 15% auto; /* 15% from the top and centered */
+	    padding: 20px;
+	    width: 80%; /* Could be more or less, depending on screen size */
+	}
+
+	.modal-content input {
+		font-size: 40px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	#modalSubmit {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+	}
+}
