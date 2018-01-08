@@ -44,10 +44,23 @@ body {
 		font-size: 30px;
 	}
 
-	.button {
+	#CAMT {
 		font-size: 80px;
 		font-family: 'Oswald', sans-serif;
 		color: white;
+		display: inline-block;
+	}
+
+	#signUp {
+		text-decoration: underline;
+	}
+
+	#Go {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
 	}
 
 	#invitation {
@@ -55,6 +68,11 @@ body {
 		font-size: 30px;
 		color: white;
 		margin-top: 35px;
+	}
+
+	#invitation a {
+		text-decoration: underline;
+		color: white;
 	}
 
 	img {
@@ -82,7 +100,7 @@ body {
 		background-color: rgba(255, 255, 255, 0.32);
 	}
 
-	#doneButton {
+	.doneButton {
 		font-family: 'Oswald', sans-serif;
 		font-size: 80%;
 		margin-left: 55%;
