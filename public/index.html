@@ -21,7 +21,7 @@
 
 			<div>
 				<p id="invitation">Not having an account is not an excuse. 
-					<button id="signUp">Sing up</button> for full access or continue as a <a href="profileTest.html">guest</a>.
+					<button id="signUp">Sing up</button> for full access or continue as a <a href="../views/layouts/mainProfile.handlebars">guest</a>.
 				</p>
 			</div>
 		</section>
@@ -102,15 +102,12 @@
 			     	console.log(newUser);
 			     	$("#pleaseComplete").hide();
 			     	//POST USER INFO
-			     	window.location.href="profileTest.html";
+			     	window.location.href="../views/layouts/mainProfile.handlebars";
 		    	} else {
 		    		$("#pleaseComplete").show();
 		    	}
 		    });
-
 	   	});
-
-
 	</script>
 </body>
 </html>
