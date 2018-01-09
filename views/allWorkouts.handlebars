@@ -2,20 +2,10 @@
 	<div class="dropdown">
 		<div class="singleWorkout">
 			<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{exercises.muscle_group}}">
-			UPPER-BACK
-			<div id="dropChest" class="dropdown-content" data-state="hidden">
-				<a href="#">Exercise 1
-					<p>This is a description</p>
-					<button class="saveWorkout">Save</button>
-				</a>
-				<a href="#">Exercise 2
-					<p>This is a description</p>
-					<button class="saveWorkout">Save</button>
-				</a>
-			</div>
+			{{exercises.muscle_group}}
+			
+			{{> muscles.muscleInfo}}
 		</div>
 	</div>
-
-
 {{/each}}
 
