@@ -1,0 +1,17 @@
+var db = require("../models")
+
+	module.exports = function(app){
+		// get request to see all exercises
+		app.get("/api/exercises", function(req,res){
+			db.Exercises.findAll({
+				name: req.name,
+				description: req.description
+			}).then(function(dbExercises){
+				res.json(dbExercises);
+			});
+		});
+		// might need a different route related to workout_exercises/:id
+		app.post("/api/exercises/:id", function(req,res){
+			db.Exercises.create(req.body).then function(dbExercises)
+		})
+	}
