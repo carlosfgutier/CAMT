@@ -11,7 +11,10 @@ CREATE TABLE person_acct(
 	id_acct INTEGER NOT NULL AUTO_INCREMENT,
 	username VARCHAR(255) NOT NULL,
 	password VARCHAR(255) NOT NULL,
+	user_city VARCHAR(255) NOT NULL,
+	user_zip INTEGER NOT NULL,
 	acct_creation TIMESTAMP NOT NULL,
+
 
 	PRIMARY KEY (id_acct)
 );
