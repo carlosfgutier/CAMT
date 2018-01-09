@@ -1,4 +1,5 @@
 // create the routes here to connect to the server 
+	// ROUTES 
 
 	// call the db /models
 
