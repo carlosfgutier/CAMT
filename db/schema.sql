@@ -37,4 +37,12 @@ CREATE TABLE workouts(
 	FOREIGN KEY (id_acct) REFERENCES person_acct(id_acct)
 ); 
 
-SELECT 
+-- table to save all the exercises 
+CREATE TABLE exercises(
+	id_exercise INTEGER NOT NULL AUTO_INCREMENT,
+	exercise_name VARCHAR(255) NOT NULL,
+	exercise_discription VARCHAR(255),
+	muscle_group VARCHAR(255) NOT NULL,
+
+	PRIMARY KEY (id_exercise)
+);
