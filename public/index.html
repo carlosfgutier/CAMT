@@ -101,8 +101,14 @@
 			     	};
 			     	console.log(newUser);
 			     	$("#pleaseComplete").hide();
-			     	//POST USER INFO
-			     	window.location.href="../views/layouts/mainProfile.handlebars";
+			     		//POST USER INFO
+			     		function createUser() {
+			     			$.post("/api/account", newUser, userReady)
+			     		};
+			     	
+			     	function userReady() { 
+			     		window.location.href="../views/layouts/mainProfile.handlebars";
+			     	};
 		    	} else {
 		    		$("#pleaseComplete").show();
 		    	}
