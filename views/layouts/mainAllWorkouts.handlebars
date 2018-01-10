@@ -152,6 +152,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function() {
+
 			//hide all drop downs
 			$(".dropdown-content").hide();
 
@@ -170,12 +171,18 @@
 				return false; // don't keep bubbling
 			});
 
-			$(".dropdown-content button").click(function(){
+			$(".saveWorkout").click(function(event){
 				// POST TO MY WORKOUTS
+				var savedWorkout = {
+					name: event.target.getAttribute("data-name")
+					description: event.target.getAttribute("data-description")
+				};
+
+				function saveExercise() {
+					$.post("/api/workout_exercise/:id", savedWorkout)
+				};
 			});
 		});
-
-
 
 	</script>
 </body>
