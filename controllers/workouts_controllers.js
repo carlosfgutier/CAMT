@@ -2,9 +2,25 @@
 	// ROUTES 
 	var db = require("../models")
 
+
+
 	module.exports = function(app){
-		app.get("")
-	}
+		// get request to see current workout
+		app.get("/api/workouts", function(req,res){
+			db.Workouts.findAll({
+				name: req.name
+				// description: req.description
+			}).then(function(dbWorkouts){
+				res.json(dbWorkouts);
+			});
+		});
+		// post current workout to db
+		app.post("/api/workouts/:id", function(req,res){
+			db.Workouts.create(req.body).then function(dbWorkouts)
+		});
+	}	
+
+
 	// call the db /models
 
 	//module.export function that export the routes 
@@ -14,12 +30,9 @@
 	// GET to personal account
 	// POST update to personal account 
 
-	//All Workouts
-		// GET DB for all workouts 
-		// POST to DB for workouts that they save- SAVE workouts table 
+
 
 	// My workouts
 		// GET of current work
 		// POST of current workout to db
-
 

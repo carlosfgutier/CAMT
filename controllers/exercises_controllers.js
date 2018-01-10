@@ -1,7 +1,11 @@
+	//All Workouts
+		// GET DB for all workouts 
+		// POST to DB for workouts that they save- SAVE workouts table 
+
 var db = require("../models")
 
 	module.exports = function(app){
-		// get request to see all exercises
+		// get request to see all exercises on the workout page
 		app.get("/api/exercises", function(req,res){
 			db.Exercises.findAll({
 				name: req.name,
@@ -14,4 +18,4 @@ var db = require("../models")
 		app.post("/api/exercises/:id", function(req,res){
 			db.Exercises.create(req.body).then function(dbExercises)
 		})
-	}
+	}			
