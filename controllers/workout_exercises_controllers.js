@@ -6,3 +6,7 @@ var db = require("../models")
 			db.Exercises.findAll()
 		});
 	}
+
+	//POST request for posting the name of the finisehd workout on the profile page
+
+	//DELETE request to delete completed workout from mySavedexercises table
