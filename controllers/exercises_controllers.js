@@ -11,11 +11,15 @@ var db = require("../models")
 				name: req.name,
 				description: req.description
 			}).then(function(dbExercises){
+				throw(err);
 				res.json(dbExercises);
 			});
 		});
 		// might need a different route related to workout_exercises/:id
 		app.post("/api/exercises/:id", function(req,res){
-			db.Exercises.create(req.body).then function(dbExercises)
-		})
+			db.Exercises.create(req.body).then(function(err, dbExercises){
+				throw(err);
+				res.send(dbExercises);
+			});
+		});
 	}			
