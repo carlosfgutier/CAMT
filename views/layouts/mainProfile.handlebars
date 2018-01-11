@@ -27,15 +27,24 @@
 			</div>
 
 			<div id="panelThree" class="panel">
-				<p>Arnold </p>
-				<p>Austin, TX</p>
-				<p>I want a summer body</p>
+				<p id="userName">Arnold </p>
+				<p id="userCity">Austin, TX</p>
+				<p id="userStatus">I want a summer body</p>
 			</div>
 
 		</section>
 
+		<aside id="profileInfo">
+			<input type="text" name="name" id="name" placeholder="Name"><br>
+			<input type="text" name="city" id="city" placeholder="City"><br>
+			<input type="text" name="status" id="status" placeholder="Status"><br>
+			<button id="submitInfo">Submit</button> 
+		</aside>
+
 		<section class="bottomPadding">
+
 			{{{ body }}}
+
 		</section>
 
 		<nav id="mainNav">
@@ -47,5 +56,32 @@
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			//GET FINISHED EXERCISES
+			$.ajax({
+				url: "/api/exercises/:id",
+				method: "GET"
+			});
+
+			$("#profileInfo").hide();
+
+			$("#settings").on("click", function() {
+				$("#profileInfo").show();
+			});
+
+			$("#submitInfo").on("click", function() {
+				$("#userName").html($("#name").val());
+				$("#userCity").html($("#city").val());
+				$("#userStatus").html($("#status").val());
+				$("#profileInfo").hide();
+			});
+
+		});
+
+	</script>
 </body>
 </html>

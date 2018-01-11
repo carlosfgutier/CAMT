@@ -23,11 +23,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -40,11 +40,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="Push Ups" data-description="lay down facing the ground the push up and down with your hands" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2: pull ups" data-description="grab the bar and hang from it, then pull yourself up and let yourself down. repeat until exhausted" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -57,11 +57,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -74,11 +74,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -91,11 +91,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -108,11 +108,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -125,11 +125,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -142,11 +142,11 @@
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
 						<a href="#">Exercise 1
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
 						</a>
 						<a href="#">Exercise 2
 							<p>This is a description</p>
-							<button class="saveWorkout">Save</button>
+							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
 						</a>
 					</div>
 				</div>
@@ -167,6 +167,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function() {
+
 			//hide all drop downs
 			$(".dropdown-content").hide();
 
@@ -185,14 +186,15 @@
 				return false; // don't keep bubbling
 			});
 
-			$(".dropdown-content button").click(function(){
-				console.log("Save");
-				console.log(this);
-				console.log($(this).parent().closest("a"));
-				// console.log($(this).parent().closest("a")[0].textContent);
-				// could set name and description as element attributes and call it that way
-				//could set workout id to element value and send id then make GET request of id from Saved Workouts
-				return false;
+			$(".saveWorkout").click(function(event){
+				// POST TO MY WORKOUTS
+				var savedWorkout = {
+					name: event.target.getAttribute("data-name"),
+					description: event.target.getAttribute("data-description")
+				};
+
+				console.log(savedWorkout);
+
 			});
 		});
 

@@ -213,6 +213,31 @@ body {
 		text-align: center;
 	}
 
+	#profileInfo {
+		text-align: center;
+		background-color: white;
+		border-radius: 20px;
+		margin: 0 10px;
+	}
+
+	#profileInfo input {
+		font-family: 'Oswald', sans-serif;
+		font-size: 35px;
+		margin: 5px 0;
+		background-color: lightgray;
+		border-radius: 20px;
+	}
+
+	#submitInfo {
+		font-family: 'Oswald', sans-serif;
+		font-size: 40px;
+		margin: 5px 0;
+		color: white;
+		background-color: black;
+		border-radius: 20px;
+		padding: 0 15px;
+	}
+
 	/*MODAL*/
 	/*--------------------------------------------*/
 	/* The Modal (background) */
