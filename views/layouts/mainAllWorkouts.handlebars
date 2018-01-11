@@ -62,11 +62,11 @@
 			$(".saveWorkout").click(function(event){
 				// POST TO MY WORKOUTS
 				var savedWorkout = {
-					name: event.target.getAttribute("data-name"),
-					description: event.target.getAttribute("data-description")
+					exercise_name: event.target.getAttribute("data-name"),
+					exercise_discription: event.target.getAttribute("data-description")
 				};
 
-				$.post("/api/exercises/:id", savedWorkout);
+				$.post("/api/exercises" + add id of exercise+, savedWorkout);
 
 			});
 		});
