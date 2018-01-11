@@ -94,10 +94,10 @@
 		    		&& $("#password2Input").val() != "") {
 		    		
 		    		var newUser = {
-				        name: $("#nameInput").val(),
+				        username: $("#nameInput").val(),
+				        password: $("#passwordInput").val(),
 				        city: $("#cityInput").val(),
-				        zipcode: $("#zipcodeInput").val(),
-				        password: $("#passwordInput").val()
+				        zipcode: $("#zipcodeInput").val()
 			     	};
 			     	
 			     	$("#pleaseComplete").hide();
