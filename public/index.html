@@ -99,16 +99,15 @@
 				        zipcode: $("#zipcodeInput").val(),
 				        password: $("#passwordInput").val()
 			     	};
-			     	console.log(newUser);
-			     	$("#pleaseComplete").hide();
-			     		//POST USER INFO
-			     		function createUser() {
-			     			$.post("/api/account", newUser, userReady)
-			     		};
 			     	
-			     	function userReady() { 
-			     		window.location.href="../views/layouts/mainProfile.handlebars";
-			     	};
+			     	$("#pleaseComplete").hide();
+
+			     	// POST USER INFO
+			   		$.post("/api/account", newUser);
+			   		
+			     	// Redirect to profile 
+			     	window.location.href="../views/layouts/mainProfile.handlebars";
+
 		    	} else {
 		    		$("#pleaseComplete").show();
 		    	}

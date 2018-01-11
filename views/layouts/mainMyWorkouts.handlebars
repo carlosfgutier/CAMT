@@ -32,15 +32,20 @@
 
 	<script type="text/javascript">
 
-		$(".doneButton").on("click", function() {
-			// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
-			var finishedWorkout = {
-				name: event.target.getAttribute("data-name")
-			};
+		$(document).ready(function() {
 
-			$.post("/api/workout/:id", finishedWorkout, removeFromSaved)
+			//GET ALL WORKOUTS FROM SAVED
+			
+			$(".doneButton").on("click", function() {
+				// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
+				var finishedWorkout = {
+					name: event.target.getAttribute("data-name")
+				};
 
-			//DELETE REQUEST
+				$.post("/api/workout/:id", finishedWorkout);
+
+				//DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
+			});
 		});
 
 	</script>
