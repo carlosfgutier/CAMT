@@ -35,6 +35,10 @@
 		$(document).ready(function() {
 
 			//GET ALL WORKOUTS FROM SAVED
+			$.ajax({
+				url: "/api/exercises",
+				method: "GET"
+			});
 			
 			$(".doneButton").on("click", function() {
 				// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
