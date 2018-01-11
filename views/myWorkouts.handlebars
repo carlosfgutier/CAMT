@@ -2,6 +2,7 @@
 	<div class="singleWorkout">
 		<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.name}}">
 		{{this.name}}
-		<button class="doneButton">Finish</button>
+		<button data-name="{{this.name}}" class="doneButton">Finish</button>
+		<p>{{this.description}}</p>
 	</div>
 {{/each}}

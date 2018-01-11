@@ -32,8 +32,31 @@
 
 	<script type="text/javascript">
 
-		$(".doneButton").on("click", function() {
-			// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
+		$(document).ready(function() {
+
+			//GET ALL WORKOUTS FROM SAVED
+			$.ajax({
+				url: "/api/exercises",
+				method: "GET"
+			});
+			
+			$(".doneButton").on("click", function() {
+				// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
+				var finishedWorkout = {
+					name: event.target.getAttribute("data-name")
+				};
+
+				$.post("/api/workouts/:id", finishedWorkout);
+
+				//DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
+				// $.ajax({
+				//     url: '/script.cgi',
+				//     type: 'DELETE',
+				//     success: function() {
+				//         location.reload();
+				//     }
+				// });
+			});
 		});
 
 	</script>

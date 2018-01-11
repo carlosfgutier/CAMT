@@ -94,15 +94,20 @@
 		    		&& $("#password2Input").val() != "") {
 		    		
 		    		var newUser = {
-				        name: $("#nameInput").val(),
+				        username: $("#nameInput").val(),
+				        password: $("#passwordInput").val(),
 				        city: $("#cityInput").val(),
-				        zipcode: $("#zipcodeInput").val(),
-				        password: $("#passwordInput").val()
+				        zipcode: $("#zipcodeInput").val()
 			     	};
-			     	console.log(newUser);
+			     	
 			     	$("#pleaseComplete").hide();
-			     	//POST USER INFO
+
+			     	// POST USER INFO
+			   		$.post("/api/account", newUser);
+			   		
+			     	// Redirect to profile 
 			     	window.location.href="../views/layouts/mainProfile.handlebars";
+
 		    	} else {
 		    		$("#pleaseComplete").show();
 		    	}
