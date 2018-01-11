@@ -61,16 +61,16 @@
 
 		$(document).ready(function() {
 
-			$("#profileInfo").hide();
-
+			//GET FINISHED EXERCISES
 			$.ajax({
 				url: "/api/exercises/:id",
 				method: "GET"
 			});
 
+			$("#profileInfo").hide();
+
 			$("#settings").on("click", function() {
 				$("#profileInfo").show();
-				
 			});
 
 			$("#submitInfo").on("click", function() {
