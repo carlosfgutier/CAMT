@@ -42,7 +42,7 @@
 					name: event.target.getAttribute("data-name")
 				};
 
-				$.post("/api/workout/:id", finishedWorkout);
+				$.post("/api/workouts/:id", finishedWorkout);
 
 				//DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
 			});
