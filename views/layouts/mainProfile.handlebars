@@ -63,7 +63,10 @@
 
 			$("#profileInfo").hide();
 
-			//GET ALL WORKOUTS FROM COMPLETED
+			$.ajax({
+				url: "/api/exercises/:id",
+				method: "GET"
+			});
 
 			$("#settings").on("click", function() {
 				$("#profileInfo").show();
