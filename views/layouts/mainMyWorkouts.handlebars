@@ -46,16 +46,16 @@
 					name: event.target.getAttribute("data-name")
 				};
 
-				$.post("/api/workouts/:id", finishedWorkout);
+				$.post("/api/profileTable", finishedWorkout);
 
-				//DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
-				// $.ajax({
-				//     url: '/script.cgi',
-				//     type: 'DELETE',
-				//     success: function() {
-				//         location.reload();
-				//     }
-				// });
+				// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
+				$.ajax({
+				    url: '/api/whatevertable' + someID,
+				    method: 'DELETE',
+				    success: function() {
+				        location.reload();
+				    }
+				});
 			});
 		});
 
