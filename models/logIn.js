@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes){
  
- var Account = sequelize.define("Account", {
+ var logIn = sequelize.define("logIn", {
 	
 		username: DataTypes.STRING,
 		password: DataTypes.STRING,
@@ -8,11 +8,11 @@ module.exports = function(sequelize, DataTypes){
 		zip: DataTypes.STRING
 	});
 
- 	Account.associate = function(models){
- 		Account.hasMany(models.Workout, {
+ 	logIn.associate = function(models){
+ 		logIn.hasMany(models.allExercises, {
  			onDelete: "cascade"
  		});
  	};
- return Account; 
+ return logIn; 
 
 };

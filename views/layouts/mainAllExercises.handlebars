@@ -22,8 +22,8 @@
 		</section>
 
 		<nav id="mainNav">
-			<a href="mainAllWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
-			<a href="mainMyWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
+			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
+			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
 			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/profileIcon.png" alt="check"/></a>
 		</nav>
 	</div>
@@ -37,7 +37,7 @@
 
 			// GET ALL WORKOUTS
 			$.ajax({
-				url: "/api/exercises",
+				url: "/api/allExercises",
 				method: "GET"
 			});
 
@@ -60,13 +60,12 @@
 			});
 
 			$(".saveWorkout").click(function(event){
-				// POST TO MY WORKOUTS
 				var savedWorkout = {
-					exercise_name: event.target.getAttribute("data-name"),
-					exercise_discription: event.target.getAttribute("data-description")
+					name: event.target.getAttribute("data-name"),
+					description: event.target.getAttribute("data-description")
 				};
 
-				$.post("/api/exercise", savedWorkout);
+				$.post("/api/savedExercises", savedWorkout);
 
 			});
 		});

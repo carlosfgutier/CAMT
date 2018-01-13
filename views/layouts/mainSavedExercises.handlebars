@@ -20,8 +20,8 @@
 			{{{ body }}}
 
 		<nav id="mainNav">
-			<a href="mainAllWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
-			<a href="mainMyWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
+			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
+			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
 			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/profileIcon.png" alt="check"/></a>
 		</nav>
 		
@@ -36,21 +36,21 @@
 
 			//GET ALL WORKOUTS FROM SAVED
 			$.ajax({
-				url: "/api/exercises",
+				url: "/api/savedExercises",
 				method: "GET"
 			});
 			
-			$(".doneButton").on("click", function() {
+			$(".doneButton").on("click", function(event) {
 				// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
 				var finishedWorkout = {
 					name: event.target.getAttribute("data-name")
 				};
 
-				$.post("/api/profileTable", finishedWorkout);
+				$.post("/api/profile", finishedWorkout);
 
 				// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
 				$.ajax({
-				    url: '/api/whatevertable' + someID,
+				    url: '/api/savedExercises' + event.target.getAttribute("data-name"),
 				    method: 'DELETE',
 				    success: function() {
 				        location.reload();

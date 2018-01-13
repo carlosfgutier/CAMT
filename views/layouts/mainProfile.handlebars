@@ -48,8 +48,8 @@
 		</section>
 
 		<nav id="mainNav">
-			<a href="mainAllWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
-			<a href="mainMyWorkouts.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
+			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
+			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
 			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/profileIcon.png" alt="check"/></a>
 		</nav>
 	</div>
@@ -63,7 +63,7 @@
 
 			//GET FINISHED EXERCISES
 			$.ajax({
-				url: "/api/exercises/:id",
+				url: "/api/profile/:id",
 				method: "GET"
 			});
 
