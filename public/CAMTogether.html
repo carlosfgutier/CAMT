@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CAMT Together</title>
+</head>
+  <meta charset="utf-8">
+<body>
+  <h1>CAMTogether</h1>
+  <div id="container">
+    <div class="page-search">
+        <form id="topic-form">
+          <label for="keyword">Keyword</label>
+          <input type="text" id="keyword">
+          <label for="zipcode">Zipcode</label>
+          <input type="text" id="zipcode">
+          <label for="radius">Within</label>
+          <select id="radius" name="Distance">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option selected value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+          </select>
+          <button id="search-button">Search</button>
+        </form>
+      </div>
+
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$("#search-button").on("click", function(){
+  event.preventDefault();
+
+    var zipcode = $("#zipcode").val();
+    console.log(zipcode);
+
+    // Perfoming an AJAX GET request to get the latitude and longitude from zipcode with google API
+    $.ajax({
+       url : "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:"+zipcode+"&sensor=falsekey=AIzaSyBq6p5OiOUZPCLxPjgCHnHUKn6bcIh3y_E",
+       method: "GET",
+       success:function(data){
+          latitude = data.results[0].geometry.location.lat;
+          longitude= data.results[0].geometry.location.lng;
+          console.log(latitude, longitude);
+      
+      // Perfroming first AJAX GET request to get the latitude and longitude from zipcode with meetup API
+      /*$.ajax({
+        url : "https://api.meetup.com/find/locations?&sign=true&photo-host=public&query="+zipcode+"&key=411357b7e1d7867773e6f5ef1275e",
+        dataType: "jsonp",
+        method: "GET",
+        success:function(data){
+          
+          console.log(data);*/
+
+          SearchText = $("#keyword").val();
+            console.log(SearchText);
+
+          radius = $("#radius").val();
+            console.log(radius);
+
+          meetQueryURL = "https://api.meetup.com/find/upcoming_events";
+
+          // Perfoming an AJAX GET request to meetup API using the latitude and longitude from google API
+          $.ajax({
+            url: "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-97&page=8&text=soccer&radius=100&lat=30&order=time&key=411357b7e1d7867773e6f5ef1275e",
+            dataType: "jsonp",
+            method: "GET",
+            success:function(response){
+              console.log(response);
+            }
+          });
+
+
+
+
+
+
+      
+       }
+
+    });
+});
+</script>
+
+</body>
+</html>
