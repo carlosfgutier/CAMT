@@ -37,21 +37,22 @@ $("#search-button").on("click", function(){
     console.log(zipcode);
 
     // Perfoming an AJAX GET request to get the latitude and longitude from zipcode with google API
-    /*$.ajax({
+    $.ajax({
        url : "https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:"+zipcode+"&sensor=falsekey=AIzaSyBq6p5OiOUZPCLxPjgCHnHUKn6bcIh3y_E",
        method: "GET",
        success:function(data){
           latitude = data.results[0].geometry.location.lat;
           longitude= data.results[0].geometry.location.lng;
-          console.log(latitude, longitude);*/
+          console.log(latitude, longitude);
       
       // Perfroming first AJAX GET request to get the latitude and longitude from zipcode with meetup API
-      $.ajax({
-       url : "https://api.meetup.com/find/locations?&sign=true&photo-host=public&query="+zipcode+"&key=411357b7e1d7867773e6f5ef1275e",
-       method: "GET",
-       success:function(data){
+      /*$.ajax({
+        url : "https://api.meetup.com/find/locations?&sign=true&photo-host=public&query="+zipcode+"&key=411357b7e1d7867773e6f5ef1275e",
+        dataType: "jsonp",
+        method: "GET",
+        success:function(data){
           
-          console.log(data);
+          console.log(data);*/
 
           SearchText = $("#keyword").val();
             console.log(SearchText);
@@ -59,16 +60,17 @@ $("#search-button").on("click", function(){
           radius = $("#radius").val();
             console.log(radius);
 
-         /* meetQueryURL = "https://api.meetup.com/find/upcoming_events";
+          meetQueryURL = "https://api.meetup.com/find/upcoming_events";
 
           // Perfoming an AJAX GET request to meetup API using the latitude and longitude from google API
           $.ajax({
             url: "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-97&page=8&text=soccer&radius=100&lat=30&order=time&key=411357b7e1d7867773e6f5ef1275e",
+            dataType: "jsonp",
             method: "GET",
             success:function(response){
               console.log(response);
             }
-          });*/
+          });
 
 
 
