@@ -19,10 +19,10 @@ app.use(express.static("public"));
 //Routes
 // ########################################################################
 // needs to call the route. I needf to create the routes file
-require("./routes/logInRoutes.js");
-require("./routes/allExercisesRoutes.js");
-require("./routes/savedExercisesRoutes.js");
-require("./routes/profileRoutes.js");
+require("./Routes/logInRoutes.js");
+require("./Routes/allExercisesRoutes.js");
+require("./Routes/savedExercisesRoutes.js");
+require("./Routes/profileRoutes.js");
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
