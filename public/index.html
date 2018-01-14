@@ -97,13 +97,13 @@
 				        username: $("#nameInput").val(),
 				        password: $("#passwordInput").val(),
 				        city: $("#cityInput").val(),
-				        zipcode: $("#zipcodeInput").val()
+				        zip: $("#zipcodeInput").val()
 			     	};
 			     	
 			     	$("#pleaseComplete").hide();
 
 			     	// POST USER INFO
-			   		$.post("/api/account", newUser);
+			   		$.post("/api/logIn", newUser);
 			   		
 			     	// Redirect to profile 
 			     	window.location.href="../views/layouts/mainProfile.handlebars";

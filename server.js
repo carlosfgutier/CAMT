@@ -1,8 +1,6 @@
 // Starting point for the Server and Node/Express 
-
 var express = require("express");
 var bodyParser = require("body-parser");
-
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -20,9 +18,11 @@ app.use(express.static("public"));
 
 //Routes
 // ########################################################################
-	// needs to call the route. I needf to create the routes file
-//require("./routes/api-routes.js")(app);
-require("./controllers/exercises_controllers.js");
+// needs to call the route. I needf to create the routes file
+require("./routes/logInRoutes.js");
+require("./routes/allExercisesRoutes.js");
+require("./routes/savedExercisesRoutes.js");
+require("./routes/profileRoutes.js");
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
