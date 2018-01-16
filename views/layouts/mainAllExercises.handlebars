@@ -62,7 +62,7 @@
 			$(".saveWorkout").click(function(event){
 				var savedWorkout = {
 					name: event.target.getAttribute("data-name"),
-					description: event.target.getAttribute("data-description")
+					description: event.target.getAttribute("data-description")			
 				};
 
 				$.post("/api/savedExercises", savedWorkout);
