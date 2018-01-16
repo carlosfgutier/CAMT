@@ -8,7 +8,6 @@ module.exports = function(app){
 			name: req.name,
 			description: req.description,
 		}).then(function(dbSavedExercises) {
-			throw(err);
 			res.render("savedExercises", dbSavedExercises);
 			// res.json(dbSavedExercises);
 		});
@@ -16,8 +15,7 @@ module.exports = function(app){
 
 	//POST request for posting the name of the finisehd workout on the profile page
 	app.post("/api/profile", function(req, res) {
-		db.profile.create(req.body).then(function(err, dbProfile) {
-			throw(err)
+		db.profile.create(req.body).then(function(dbProfile) {
 			res.send(dbProfile);
 		});
 	});

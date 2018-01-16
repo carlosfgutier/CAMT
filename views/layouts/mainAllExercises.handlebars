@@ -9,67 +9,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
-	<div id="container">
-		
-		<header>
-			<img id="headerCheck" src="/assets/images/check.png" alt="check">
-		</header>
 
-		<section class="bottomPadding muscleGroups">
+	{{{ body }}}
 
-			{{{ body }}}
-			
-		</section>
-
-		<nav id="mainNav">
-			<a href="http://localhost:8080/allExercises"><img id="navCheck" class="navIcon" src="/assets/images/check.png" alt="check"/></a>
-			<a href="http://localhost:8080/savedExercises"><img id="navCheck" class="navIcon" src="/assets/images/workoutsIcon.png" alt="weight"/></a>
-			<a href="http://localhost:8080/profile"><img id="navCheck" class="navIcon" src="/assets/images/profileIcon.png" alt="check"/></a>
-		</nav>
-	</div>
-
-	<!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-
-			// GET ALL WORKOUTS
-			$.ajax({
-				url: "/allExercises",
-				method: "GET"
-			});
-
-			//hide all drop downs
-			$(".dropdown-content").hide();
-
-			//clicking on next workout hides any other and shows clicked one
-			$(".dropdown").click(function(){
-				$(".dropdown-content").each(
-					function(index, item){
-						$(item).hide();
-					}
-				);
-				$(this).find(".dropdown-content").show();
-			});
-
-			$(".dropdown-content").click(function(){
-				$(this).hide();
-				return false; // don't keep bubbling
-			});
-
-			$(".saveWorkout").click(function(event){
-				var savedWorkout = {
-					name: event.target.getAttribute("data-name"),
-					description: event.target.getAttribute("data-description")			
-				};
-
-				$.post("/api/savedExercises", savedWorkout);
-
-			});
-		});
-
-	</script>
 </body>
 </html>
