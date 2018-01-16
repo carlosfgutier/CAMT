@@ -13,6 +13,7 @@ module.exports = function(app){
 	});
 
 	//Get request to render info within handlebars
+		// why is this here ???? can combine with the one above 
 	app.get("/api/savedExercise", function(req,res){
 		db.savedExercises.findAll({
 			name: req.name,

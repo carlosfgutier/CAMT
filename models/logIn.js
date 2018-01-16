@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes){
  			onDelete: "cascade"
  		});
  	};
+ 	console.log("Inside the model  :" + logIn);
  return logIn; 
 
 };

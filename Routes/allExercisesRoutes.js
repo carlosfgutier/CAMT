@@ -3,12 +3,15 @@ var db = require("../models")
 module.exports = function(app){
 	// get request to see all exercises on the workout page
 	app.get("/api/allExercises", function(req,res){
+		console.log("request sent ");
 		db.allExercises.findAll({
 			name: req.name,
-			description: req.description
-		}).then(function(dbAllExercises){
-			throw(err);
+			descripton: req.description
+
+		}).then(function(err, dbAllExercises){
+			//throw(err);
 			res.json(dbAllExercises);
+			
 		});
 	});
 
@@ -17,7 +20,7 @@ module.exports = function(app){
 		db.allExercises.findAll({
 			name: req.name,
 			description: req.description
-		}).then(function(dbAllExercises){
+		}).then(function(err, dbAllExercises){
 			throw(err);
 			// I can modify the data here
 			//the code bellow renders dbExercises into the allWorkouts handlebars
