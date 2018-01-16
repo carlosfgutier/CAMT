@@ -4,7 +4,9 @@ module.exports = function(sequelize, DataTypes){
 	var allExercises = sequelize.define("allExercises", {
  		name: DataTypes.STRING,
  		description: DataTypes.TEXT,
- 		muscle_group: DataTypes.STRING
+ 		muscle_group: DataTypes.STRING,
+ 		primaryKey: true
+
  	});
 	// Links to the workout file so that is has a many to many relationship
 		// this is used to create the saved workouts 
