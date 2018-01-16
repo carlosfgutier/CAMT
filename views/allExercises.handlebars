@@ -1,9 +1,9 @@
-{{#each exercises}}
+{{#each allExercises}}
 	{{#if this.muscle_group}}
 		<div class="dropdown">
 			<div class="singleWorkout">
-				<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{exercises.muscle_group}}">
-				{{exercises.muscle_group}}
+				<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.muscle_group}}">
+				{{this.muscle_group}}
 				
 				{{> muscles.muscleInfo}}
 			</div>

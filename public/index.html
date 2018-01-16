@@ -21,7 +21,7 @@
 
 			<div>
 				<p id="invitation">Not having an account is not an excuse. 
-					<button id="signUp">Sing up</button> for full access or continue as a <a href="../views/layouts/mainProfile.handlebars">guest</a>.
+					<button id="signUp">Sign up</button> for full access or continue as a <a href="api/allExercises">guest</a>.
 				</p>
 			</div>
 		</section>
@@ -103,10 +103,11 @@
 			     	$("#pleaseComplete").hide();
 
 			     	// POST USER INFO
-			   		$.post("/api/logIn", newUser);
-			   		
-			     	// Redirect to profile 
-			     	//window.location.href="../views/layouts/mainProfile.handlebars";
+			   		$.post("/api/logIn", newUser, function(data) {
+			   			
+			   			// Redirect to profile 
+			     		window.location.href="/api/allExercises";
+			   		});
 
 		    	} else {
 		    		$("#pleaseComplete").show();

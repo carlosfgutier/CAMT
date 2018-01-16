@@ -1,4 +1,5 @@
-var db = require("../models")
+var db = require("../models");
+var path = require("path");
 
 module.exports = function(app){
 	// get request to see all exercises on the workout page
@@ -25,14 +26,20 @@ module.exports = function(app){
 			// I can modify the data here
 			//the code bellow renders dbExercises into the allWorkouts handlebars
 			res.render("allExercises", dbAllExercises);
+			// res.send(dbAllExercises);
 		});
 	});
-	
+
 	// might need a different route related to workout_exercises/:id
 	app.post("/api/savedExercises", function(req,res){
 		db.savedExercises.create(req.body).then(function(err, dbSavedExercises){
 			throw(err);
 			res.send(dbSavedExercises);
 		});
+	});
+
+	//HTLM Route
+	app.get("/api/allExercises", function(req, res) {
+	    res.sendFile(path.join(__dirname, "../views/layouts/mainAllExercises.handlebars"));
 	});
 };	

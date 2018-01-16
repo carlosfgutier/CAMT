@@ -1,4 +1,5 @@
-var db = require("../models")
+var db = require("../models");
+var path = require("path");
 
 module.exports = function(app){
 	// get request call to the table of exercises posted in exercises_controllers
@@ -8,19 +9,9 @@ module.exports = function(app){
 			description: req.description
 		}).then(function(dbSavedExercises) {
 			throw(err);
-			res.json(dbSavedExercises);
-		});
-	});
 
-	//Get request to render info within handlebars
-		// why is this here ???? can combine with the one above 
-	app.get("/api/savedExercise", function(req,res){
-		db.savedExercises.findAll({
-			name: req.name,
-			description: req.description
-		}).then(function(dbSavedExercises) {
-			throw(err);
 			res.render("savedExercises", dbSavedExercises);
+			// res.json(dbSavedExercises);
 		});
 	});
 
@@ -39,6 +30,11 @@ module.exports = function(app){
 				name: req.params.exerciseName
 			}
 		});
+	});
+
+	//HTLM Route
+	app.get("/api/allExercises", function(req, res) {
+	    res.sendFile(path.join(__dirname, "../views/layouts/mainSavedExercises.handlebars"));
 	});
 };
 
