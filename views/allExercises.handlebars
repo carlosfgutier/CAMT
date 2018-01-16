@@ -1,13 +1,18 @@
 {{#each allExercises}}
-	{{#if muscle_group}}
-		<div class="dropdown">
-			<div class="singleWorkout">
-				<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{muscle_group}}">
-				{{muscle_group}}
-				
-				{{> muscles.muscleInfo}}
-			</div>
-		</div>
-	{{/if}}
+    {{!-- {{#if this.dataValues.muscle_group}} --}}
+        <div class="dropdown">
+            <div class="singleWorkout">
+                <img class="workoutImage" src="/assets/images/weightIcon.png" alt="{{this.dataValues.name}}">
+                {{this.dataValues.name}}
+                
+               <div id="dropChest" class="dropdown-content" data-state="hidden">
+	
+					<p>{{this.dataValues.description}}</p>
+					<button data-name="{{this.dataValues.name}}" data-description="{{this.dataValues.description}}" data-id="{{this.dataValues.id}}" class="saveWorkout">Save</button>
+						
+				</div>
+            </div>
+        </div>
+    {{!-- {{/if}} --}}
 {{/each}}
 

@@ -7,7 +7,8 @@ module.exports = function(app){
 		db.profile.findAll({
 			name: req.name
 		}).then(function(dbFinishedExercise){
-			res.render("profile", dbFinishedExercise);
+			console.log(dbFinishedExercise);
+			res.render("profile", {profile: dbFinishedExercise});
 			// res.json(dbFinishedExercise);
 		});
 	});

@@ -10,8 +10,8 @@ module.exports = function(app){
 			muscle_group: req.muscle_group
 		}).then(function(dbAllExercises){
 			console.log(dbAllExercises);
+			res.render("allExercises", {allExercises: dbAllExercises});
 			// res.send(dbAllExercises);
-			res.render("AllExercises", dbAllExercises);
 		});
 	});
 

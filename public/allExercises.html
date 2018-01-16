@@ -19,16 +19,12 @@
 			<div class="dropdown">
 				<div class="singleWorkout">
 					<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
-					CHEST
+					Bench Presses
 					<div id="dropChest" class="dropdown-content" data-state="hidden">
-						<a href="#">Exercise 1
-							<p>This is a description</p>
-							<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
-						</a>
-						<a href="#">Exercise 2
-							<p>This is a description</p>
-							<button data-name="exercise 2" data-description="this is the description for exercise 2" class="saveWorkout">Save</button>
-						</a>
+						
+						<p>This is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a descriptionThis is a description</p>
+						<button data-name="exercise 1" data-description="This is a description" class="saveWorkout">Save</button>
+						
 					</div>
 				</div>
 			</div>
@@ -190,7 +186,8 @@
 				// POST TO MY WORKOUTS
 				var savedWorkout = {
 					name: event.target.getAttribute("data-name"),
-					description: event.target.getAttribute("data-description")
+					description: event.target.getAttribute("data-description"),
+					allExerciseId: event.target.getAttribute("data-id")
 				};
 
 				console.log(savedWorkout);
