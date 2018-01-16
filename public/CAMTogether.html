@@ -24,8 +24,10 @@
           </select>
           <button id="search-button">Search</button>
         </form>
-      </div>
-
+    </div>
+    <div id="results-view">
+      
+    </div>
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -69,6 +71,18 @@ $("#search-button").on("click", function(){
             method: "GET",
             success:function(response){
               console.log(response);
+              $("#results-view").empty();
+              for (var i = 0; i < response.data.events.length; i++) {
+                console.log(response.data.events[i].name);
+                var name = response.data.events.name;
+                var eventDiv = $("<div>");
+                eventDiv.addClass("image-box");
+                var p = $("<p>").text(response.data.events[i].name+" "+response.data.events[i].local_date+" "+response.data.events[i].local_time);
+                eventDiv.append(p)
+                $("#results-view").append(eventDiv);
+            }
+
+
             }
           });
        }
