@@ -21,7 +21,7 @@
 
 			<div>
 				<p id="invitation">Not having an account is not an excuse. 
-					<button id="signUp">Sign up</button> for full access or continue as a <a href="api/allExercises">guest</a>.
+					<button id="signUp">Sign up</button> for full access or continue as a <a href="http://localhost:8080/allExercises">guest</a>.
 				</p>
 			</div>
 		</section>
@@ -106,7 +106,7 @@
 			   		$.post("/api/logIn", newUser, function(data) {
 			   			
 			   			// Redirect to profile 
-			     		window.location.href="/api/allExercises";
+			     		window.location.href="http://localhost:8080/allExercises";
 			   		});
 			   		
 		    	} else {

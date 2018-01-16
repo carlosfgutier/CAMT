@@ -3,7 +3,7 @@ var path = require("path");
 
 module.exports = function(app){
 	// get request call to the table of exercises posted in exercises_controllers
-	app.get("/api/savedExercise", function(req,res){
+	app.get("/savedExercises", function(req,res){
 		db.savedExercises.findAll({
 			name: req.name,
 			description: req.description
@@ -29,11 +29,6 @@ module.exports = function(app){
 				name: req.params.exerciseName
 			}
 		});
-	});
-
-	//HTLM Route
-	app.get("/api/allExercises", function(req, res) {
-	    res.sendFile(path.join(__dirname, "../views/layouts/mainSavedExercises.handlebars"));
 	});
 };
 
