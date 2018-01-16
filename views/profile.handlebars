@@ -1,6 +1,91 @@
-<div class="singleWorkout">
-	{{#each exercises}}
-		<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.name}}">
-		{{this.name}}
-	{{/each}}
+<div id="container">
+		
+	<header>
+		<img id="headerCheck" src="/assets/images/profileIcon.png" alt="profile">
+	</header>
+
+	<div id="panelOne" class="panel">
+		<button id="eventsButton">Events</button>
+		<img id="settings" src="/assets/images/settingsIcon.png" alt="settings">
+	</div>
+
+	<section id="about">
+
+		<div id="panelTwo" class="panel">
+			<img id="profilePicture" src="https://www.biography.com/.image/t_share/MTE1ODA0OTcxNzgwNDQxNjEz/arnold-schwarzenegger-9476355-2-402.jpg" alt="profile picture">
+		</div>
+
+		<div id="panelThree" class="panel">
+			<p id="userName">Arnold </p>
+			<p id="userCity">Austin, TX</p>
+			<p id="userStatus">I want a summer body</p>
+		</div>
+
+	</section>
+
+	<aside id="profileInfo">
+		<input type="text" name="name" id="name" placeholder="Name"><br>
+		<input type="text" name="city" id="city" placeholder="City"><br>
+		<input type="text" name="status" id="status" placeholder="Status"><br>
+		<button id="submitInfo">Submit</button> 
+	</aside>
+
+	<section class="bottomPadding">
+
+	<div class="singleWorkout">
+		{{#each exercises}}
+			<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.name}}">
+			{{this.name}}
+		{{/each}}
+	</div>
+
+	</section>
+
+    <nav id="mainNav">
+        <a href="http://localhost:8080/allExercises"><img id="naveAll" class="navIcon" src="/assets/images/check.png" alt="check"/></a>
+        <a href="http://localhost:8080/savedExercises"><img id="navSaved" class="navIcon" src="/assets/images/workoutsIcon.png" alt="weight"/></a>
+        <a href="http://localhost:8080/profile"><img id="navProfile" class="navIcon" src="/assets/images/profileIcon.png" alt="check"/></a>
+    </nav>
 </div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		//GET FINISHED EXERCISES
+		$.ajax({
+			url: "/profile",
+			method: "GET"
+		});
+
+		$("#profileInfo").hide();
+
+		$("#settings").on("click", function() {
+			$("#profileInfo").show();
+		});
+
+		$("#submitInfo").on("click", function() {
+			$("#userName").html($("#name").val());
+			$("#userCity").html($("#city").val());
+			$("#userStatus").html($("#status").val());
+			$("#profileInfo").hide();
+		});
+
+		$("#navAll").on("click", function() {
+			$.get("/allExercises");
+		});
+
+		$("#navSaved").on("click", function() {
+			$.get("/profile");
+		});
+
+		$("#navProfile").on("click", function() {
+			$.get("/profile");
+		});
+
+	});
+
+</script>

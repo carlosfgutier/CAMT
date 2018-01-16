@@ -3,62 +3,14 @@
 <head>
 	<title>My Workouts</title>
 	<!-- CSS -->
-	<link rel="stylesheet" href="../../public/assets/css/reset.css" type="text/css">
-	<link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/assets/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 	<!-- FONT -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
-	<div id="container">
-		
-		<header>
-			<img id="headerCheck" src="../../public/assets/images/workoutsIcon.png" alt="check">
-		</header>
-
-		<section class="bottomPadding">
 			
-			{{{ body }}}
+	{{{ body }}}
 
-		<nav id="mainNav">
-			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
-			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
-			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/profileIcon.png" alt="check"/></a>
-		</nav>
-		
-	</div>
-
-	<!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-
-			//GET ALL WORKOUTS FROM SAVED
-			$.ajax({
-				url: "/api/savedExercises",
-				method: "GET"
-			});
-			
-			$(".doneButton").on("click", function(event) {
-				// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
-				var finishedWorkout = {
-					name: event.target.getAttribute("data-name")
-				};
-
-				$.post("/api/profile", finishedWorkout);
-
-				// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
-				$.ajax({
-				    url: '/api/savedExercises' + event.target.getAttribute("data-name"),
-				    method: 'DELETE',
-				    success: function() {
-				        location.reload();
-				    }
-				});
-			});
-		});
-
-	</script>
 </body>
 </html>
