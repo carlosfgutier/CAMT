@@ -3,8 +3,8 @@
 <head>
 	<title>CAMT Profile</title>
 	<!-- CSS -->
-	<link rel="stylesheet" href="../../public/assets/css/reset.css" type="text/css">
-	<link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/assets/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 	<!-- FONT -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
@@ -12,12 +12,12 @@
 	<div id="container">
 		
 		<header>
-			<img id="headerCheck" src="../../public/assets/images/profileIcon.png" alt="check">
+			<img id="headerCheck" src="/assets/images/profileIcon.png" alt="profile">
 		</header>
 
 		<div id="panelOne" class="panel">
 			<button id="eventsButton">Events</button>
-			<img id="settings" src="../../public/assets/images/settingsIcon.png" alt="settings">
+			<img id="settings" src="/assets/images/settingsIcon.png" alt="settings">
 		</div>
 
 		<section id="about">
@@ -48,9 +48,9 @@
 		</section>
 
 		<nav id="mainNav">
-			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/check.png" alt="check"/></a>
-			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/workoutsIcon.png" alt="weight"/></a>
-			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="../../public/assets/images/profileIcon.png" alt="check"/></a>
+			<a href="mainAllExercises.handlebars"><img id="navCheck" class="navIcon" src="/assets/images/check.png" alt="check"/></a>
+			<a href="mainSavedExercises.handlebars"><img id="navCheck" class="navIcon" src="/assets/images/workoutsIcon.png" alt="weight"/></a>
+			<a href="mainProfile.handlebars"><img id="navCheck" class="navIcon" src="/assets/images/profileIcon.png" alt="check"/></a>
 		</nav>
 	</div>
 
@@ -63,7 +63,7 @@
 
 			//GET FINISHED EXERCISES
 			$.ajax({
-				url: "/api/profile",
+				url: "/profile",
 				method: "GET"
 			});
 
