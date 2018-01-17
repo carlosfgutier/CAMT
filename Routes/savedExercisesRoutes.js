@@ -6,13 +6,8 @@ module.exports = function(app){
 	app.get("/savedExercises", function(req,res){
 		db.savedExercises.findAll({
 			name: req.name,
-			description: req.description,
+			description: req.description
 		}).then(function(dbSavedExercises) {
-<<<<<<< HEAD
-			throw(err);
-
-=======
->>>>>>> integration
 			res.render("savedExercises", dbSavedExercises);
 			// res.json(dbSavedExercises);
 		});

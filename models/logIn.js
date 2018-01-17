@@ -7,13 +7,17 @@ module.exports = function(sequelize, DataTypes){
 		city: DataTypes.STRING,
 		zip: DataTypes.STRING
 	});
+//##############################################
+// CREATE a relationship with the savedEXercises
+			// Many to one relationship, Many savedExercises to one Login
+ 	// logIn.associate = function(models){
+ 	// 	// needs to be saved Excercise so that 
+ 	// 	logIn.hasMany(models.savedExercise, {
+ 	// 		//write the connection to the savedExercise
+ 	// 		foreignKey: 'id'
+ 	// 	});
+ 	// };
 
- 	logIn.associate = function(models){
- 		logIn.hasMany(models.allExercises, {
- 			onDelete: "cascade"
- 		});
- 	};
- 	console.log("Inside the model  :" + logIn);
  return logIn; 
 
 };
