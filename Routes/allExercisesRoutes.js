@@ -3,8 +3,10 @@ var path = require("path");
 
 module.exports = function(app){
 	// get request to see all exercises on the workout page
+
 	app.get("/allExercises", function(req,res){
 		db.allExercises.findAll({
+			id: req.id,
 			name: req.name,
 			description: req.description,
 			muscle_group: req.muscle_group
