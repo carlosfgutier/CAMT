@@ -69,11 +69,10 @@
                 name: event.target.getAttribute("data-name"),
                 description: event.target.getAttribute("data-description")          
             };
-
             $.post("/api/savedExercises", savedWorkout);
-
         });
 
+        //Webapp Logic
         $("#navAll").on("click", function() {
             $.get("/allExercises");
         });
@@ -88,5 +87,3 @@
     });
 
 </script>
-
-

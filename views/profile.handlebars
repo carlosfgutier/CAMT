@@ -61,6 +61,20 @@
 			method: "GET"
 		});
 
+		//Handlebars HTML Routes Requests
+		$("#navAll").on("click", function() {
+			$.get("/allExercises");
+		});
+
+		$("#navSaved").on("click", function() {
+			$.get("/profile");
+		});
+
+		$("#navProfile").on("click", function() {
+			$.get("/profile");
+		});
+
+		//Webapp Logic
 		$("#profileInfo").hide();
 
 		$("#settings").on("click", function() {
@@ -74,18 +88,9 @@
 			$("#profileInfo").hide();
 		});
 
-		$("#navAll").on("click", function() {
-			$.get("/allExercises");
+		$("#eventsButton").on("click", function() {
+			window.location.href="/CAMT_BLOG.html";
 		});
-
-		$("#navSaved").on("click", function() {
-			$.get("/profile");
-		});
-
-		$("#navProfile").on("click", function() {
-			$.get("/profile");
-		});
-
 	});
 
 </script>

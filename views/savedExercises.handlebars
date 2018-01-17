@@ -32,30 +32,30 @@
 
 	$(document).ready(function() {
 
-		//GET ALL WORKOUTS FROM SAVED
-		// $.ajax({
-		// 	url: "/api/savedExercises",
-		// 	method: "GET"
-		// });
+		GET ALL WORKOUTS FROM SAVED
+		$.ajax({
+			url: "/api/savedExercises",
+			method: "GET"
+		});
 		
-		// $(".doneButton").on("click", function(event) {
-		// 	// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
-		// 	var finishedWorkout = {
-		// 		name: event.target.getAttribute("data-name")
-		// 	};
+		$(".doneButton").on("click", function(event) {
+	
+			var finishedWorkout = {
+				name: event.target.getAttribute("data-name")
+			};
+			$.post("/api/profile", finishedWorkout);
 
-		// 	$.post("/api/profile", finishedWorkout);
+			// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
+			$.ajax({
+			    url: '/api/savedExercises' + event.target.getAttribute("data-name"),
+			    method: 'DELETE',
+			    success: function() {
+			        location.reload();
+			    }
+			});
+		});
 
-		// 	// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
-		// 	$.ajax({
-		// 	    url: '/api/savedExercises' + event.target.getAttribute("data-name"),
-		// 	    method: 'DELETE',
-		// 	    success: function() {
-		// 	        location.reload();
-		// 	    }
-		// 	});
-		// });
-
+		//Webapp Logic
 		$("#navAll").on("click", function() {
             $.get("/allExercises");
         });

@@ -16,6 +16,16 @@
 		</header>
 
 		<section class="bottomPadding">
+
+			<form>
+<div>
+    <input class="default-value" type="text" name="email" value="Email Address" />
+</div>
+<div>
+    <input id="password-clear" type="text" value="Password" autocomplete="off" />
+    <input id="password-password" type="password" name="password" value="" autocomplete="off" />
+</div>
+</form>
 			<div class="singleWorkout">
 				<img class="workoutImage" src="assets/images/weightIcon.png" alt="push ups">
 				PUSH UPS<button class="doneButton">Finish</button>
@@ -111,5 +121,23 @@
 
 	<!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$('#password-clear').show();
+$('#password-password').hide();
+
+$('#password-clear').focus(function() {
+    $('#password-clear').hide();
+    $('#password-password').show();
+    $('#password-password').focus();
+});
+$('#password-password').blur(function() {
+    if($('#password-password').val() == '') {
+        $('#password-clear').show();
+        $('#password-password').hide();
+    }
+});
+	</script>
 </body>
 </html>
