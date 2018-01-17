@@ -32,12 +32,12 @@
 
 	<section class="bottomPadding">
 
-	<div class="singleWorkout">
-		{{#each exercises}}
-			<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.name}}">
-			{{this.name}}
-		{{/each}}
-	</div>
+	{{#each profile}}
+			<div class="singleWorkout">
+				<img class="workoutImage" src="/assets/images/weightIcon.png" alt="{{this.dataValues.name}}">
+				{{this.dataValues.name}}
+			</div>
+	{{/each}}
 
 	</section>
 

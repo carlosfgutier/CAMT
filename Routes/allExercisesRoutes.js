@@ -18,7 +18,6 @@ module.exports = function(app){
 	// might need a different route related to workout_exercises/:id
 	app.post("/api/savedExercises", function(req,res){
 		db.savedExercises.create(req.body).then(function(dbSavedExercises){
-			// throw(err);
 			res.send(dbSavedExercises);
 		});
 	});
