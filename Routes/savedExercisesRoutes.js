@@ -6,7 +6,7 @@ module.exports = function(app){
 	app.get("/savedExercises", function(req,res){
 		db.savedExercises.findAll({
 			name: req.name,
-			description: req.description,
+			description: req.description
 		}).then(function(dbSavedExercises) {
 			console.log(dbSavedExercises);
 			res.render("savedExercises", {savedExercises: dbSavedExercises});

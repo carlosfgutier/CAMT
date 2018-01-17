@@ -25,12 +25,12 @@ app.set("view engine", "handlebars");
 //Routes
 // ########################################################################
 // needs to call the route. I needf to create the routes file
-require("./routes/logInRoutes.js")(app);
-require("./routes/allExercisesRoutes.js")(app);
-require("./routes/savedExercisesRoutes.js")(app);
-require("./routes/profileRoutes.js")(app);
+require("./Routes/logInRoutes.js")(app);
+require("./Routes/allExercisesRoutes.js")(app);
+require("./Routes/savedExercisesRoutes.js")(app);
+require("./Routes/profileRoutes.js")(app);
 // Syncing our sequelize models and then starting our Express app
-// =============================================================
+
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);

@@ -1,7 +1,7 @@
 -- Create the database to store the personal account information
-DROP DATEBASE IF EXIST acct_workouts_db;
+DROP DATABASE IF EXIST acct_workouts_db;
 -- creats the database to store the personal accts of each user 
-CREATE DATEBASE acct_workouts_db;
+CREATE DATABASE acct_workouts_db;
 
 USE acct_workouts_db;
 	-- once the account informaiton is stored link the accounts and personal workouts

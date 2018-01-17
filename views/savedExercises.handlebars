@@ -31,18 +31,18 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-
-		GET ALL WORKOUTS FROM SAVED
+  
 		$.ajax({
 			url: "/api/savedExercises",
 			method: "GET"
 		});
 		
 		$(".doneButton").on("click", function(event) {
-	
+			// POST WORKOUT NAME TO FINISHED WORKOUTS TABLE
 			var finishedWorkout = {
 				name: event.target.getAttribute("data-name")
 			};
+      
 			$.post("/api/profile", finishedWorkout);
 
 			// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
