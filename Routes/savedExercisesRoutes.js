@@ -8,7 +8,8 @@ module.exports = function(app){
 			name: req.name,
 			description: req.description,
 		}).then(function(dbSavedExercises) {
-			res.render("savedExercises", dbSavedExercises);
+			console.log(dbSavedExercises);
+			res.render("savedExercises", {savedExercises: dbSavedExercises});
 			// res.json(dbSavedExercises);
 		});
 	});

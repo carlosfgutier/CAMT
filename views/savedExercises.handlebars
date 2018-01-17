@@ -6,12 +6,12 @@
 
 	<section class="bottomPadding">
 
-		{{#each exercises}}
+		{{#each savedExercises}}
 			<div class="singleWorkout">
-				<img class="workoutImage" src="../public/assets/images/weightIcon.png" alt="{{this.name}}">
-				{{this.name}}
-				<button data-name="{{this.name}}" class="doneButton">Finish</button>
-				<p>{{this.description}}</p>
+				<img class="workoutImage" src="/assets/images/weightIcon.png" alt="{{this.dataValues.name}}">
+				{{this.dataValues.name}}
+				<button data-name="{{this.dataValues.name}}" class="doneButton">Finish</button>
+				<p>{{this.dataValues.description}}</p>
 			</div>
 		{{/each}}
 
