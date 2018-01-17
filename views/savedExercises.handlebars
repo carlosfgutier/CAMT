@@ -31,8 +31,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-
-		// GET ALL WORKOUTS FROM SAVED
+  
 		$.ajax({
 			url: "/api/savedExercises",
 			method: "GET"
@@ -43,7 +42,7 @@
 			var finishedWorkout = {
 				name: event.target.getAttribute("data-name")
 			};
-
+      
 			$.post("/api/profile", finishedWorkout);
 
 			// DELETE CLICKED WORKOUTS FROM SAVED TABLE AND RELOAD PAGE
@@ -56,6 +55,7 @@
 			});
 		});
 
+		//Webapp Logic
 		$("#navAll").on("click", function() {
             $.get("/allExercises");
         });
