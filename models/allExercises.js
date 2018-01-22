@@ -10,9 +10,9 @@ module.exports = function(sequelize, DataTypes){
 //#######################################################################
 // CREATE a relationship to the savedExercise file 
             // This relationship is a many to many = many exercises can belong to many savedExercises 
-    // allExercises.associate =  function(models){
-    //     allExercises.belongsToMany(models.savedExercises,{through:'allExercises'})
-    // }
+    allExercises.associate =  function(models){
+        allExercises.belongsTo(models.savedExercises,{as:'exercises', through:'logIn'})
+    }
     return allExercises;
 
 };

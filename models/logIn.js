@@ -10,13 +10,13 @@ module.exports = function(sequelize, DataTypes){
 //##############################################
 // CREATE a relationship with the savedEXercises
 			// Many to one relationship, Many savedExercises to one Login
- 	// logIn.associate = function(models){
- 	// 	// needs to be saved Excercise so that 
- 	// 	logIn.hasMany(models.savedExercise, {
- 	// 		//write the connection to the savedExercise
- 	// 		foreignKey: 'id'
- 	// 	});
- 	// };
+ 	logIn.associate = function(models){
+ 		// needs to be saved Excercise so that 
+ 		logIn.hasMany(models.savedExercises, {
+ 			//write the connection to the savedExercise
+ 			foreignKey: 'id'
+ 		});
+ 	};
 
  return logIn; 
 

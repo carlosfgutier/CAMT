@@ -13,9 +13,9 @@ module.exports = function(sequelize, DataTypes){
     // savedExercises.associate =function(models){
     //     savedExercises.belongsTo(models.logIn, {foreignKey: 'id'});
     // }
-    // savedExercises.associate =  function(models){
-    //     savedExercises.hasMany(models.allExercises,{through:'savedExercises'})
-    // }
+    savedExercises.associate =  function(models){
+        savedExercises.hasMany(models.allExercises,{as: 'exercises', through:'savedExercises'})
+    }
    return savedExercises;   
 };
 
